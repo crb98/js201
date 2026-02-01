@@ -13,20 +13,17 @@
 'use strict';
 
 function id() {
-  // e.g. return "UP654321";
+  return "UP2267061";
 }
 
 function fn() {
-  return 'Replace This With Your First Name';
+  return 'Connie';
 }
 
 function sn() {
-  return 'Replace This With Your Surname';
+  return 'Busby';
 }
 
-function example() {
-  // replace this example with
-  // your first function then
-  // add more below as necessary.
-
+function add(a, b) {
+  return a + b;
 }

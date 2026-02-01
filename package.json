@@ -14,8 +14,8 @@
     "globalstrict": true
   },
   "devDependencies": {
-    "eslint": "^7.19.0",
-    "eslint-config-portsoc": "^0.8.1"
+    "eslint": "^7.32.0",
+    "eslint-config-portsoc": "^0.8.2"
   },
   "eslintConfig": {
     "extends": "portsoc",
