@@ -49,11 +49,7 @@ function arraySet(arr, i, n) {
 }
 
 function addAll(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
+  return arr.reduce((sum, value) => sum + value, 0);
 }
 
 function larger(a, b) {
@@ -61,34 +57,18 @@ function larger(a, b) {
 }
 
 function largest(arr) {
-  if (arr.length === 0) {
-    return null;
-  }
-  let max = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-  return max;
+  if (arr.length === 0) return null;
+  return Math.max(...arr);
 }
 
 function compare(a, b) {
-  if (a.length !== b.length) {
-    return false;
-  }
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] !== b[i]) {
-      return false;
-    }
-  }
-  return true;
+  return a.length === b.length && a.every((v, i) => v === b[i]);
 }
 
 function addToAll(arr, n) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i] + n;
-  }
+  arr.forEach((value, index) => {
+    arr[index] = value + n;
+  });
   return arr;
 }
 
@@ -99,38 +79,19 @@ function rememberThis(keepsake) {
 }
 
 function nArray(n) {
-  const arr = [];
-  for (let i = 1; i <= n; i++) {
-    arr.push(i);
-  }
-  return arr;
+  return Array.from({ length: n }, (_, i) => i + 1);
 }
 
 function addAllOpt(arr) {
-  if (!arr || arr.length === 0) {
-    return 0;
-  }
   let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
+  (arr ?? []).forEach(v => { sum += v; });
   return sum;
 }
 
 function divisors(arr, div) {
-  const result = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % div === 0) {
-      result.push(arr[i]);
-    }
-  }
-  return result;
+  return arr.filter(x => x % div === 0);
 }
 
 function multiples(n, m) {
-  const result = [];
-  for (let i = 1; i <= n; i++) {
-    result.push(i * m);
-  }
-  return result;
+  return Array.from({ length: n }, (_, i) => (i + 1) * m);
 }
