@@ -61,8 +61,10 @@ function largest(arr) {
   return Math.max(...arr);
 }
 
-function compare(a, b) {
-  return a.length === b.length && a.every((v, i) => v === b[i]);
+export function compare(a, b) {
+  return a.length === b.length && a.every(function(v, i) {
+    return v === b[i];
+  });
 }
 
 function addToAll(arr, n) {
